@@ -25,6 +25,9 @@
 		"tracy/tracy": "^2.4",
 		"phpstan/phpstan": "^0.12"
 	},
+	"replace": {
+		"nette/http": "v3.0.4"
+	},
 	"conflict": {
 		"nette/di": "<3.0.3"
 	},
