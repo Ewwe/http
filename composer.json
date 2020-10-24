@@ -1,6 +1,6 @@
 {
-	"name": "nette/http",
-	"description": "🌐 Nette Http: abstraction for HTTP request, response and session. Provides careful data sanitization and utility for URL and cookies manipulation.",
+	"name": "ewwe/http",
+	"description": "Fork of nette/http with some fixes till accept pull request",
 	"keywords": ["nette", "http", "request", "response", "session", "security", "url", "proxy", "cookies"],
 	"homepage": "https://nette.org",
 	"license": ["BSD-3-Clause", "GPL-2.0-only", "GPL-3.0-only"],

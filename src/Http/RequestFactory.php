@@ -32,6 +32,9 @@ class RequestFactory
 	/** @var bool */
 	private $binary = false;
 
+	/** @var bool */
+	private $docker = false;
+
 	/** @var string[] */
 	private $proxies = [];
 
@@ -43,6 +46,12 @@ class RequestFactory
 		return $this;
 	}
 
+    /** @return static */
+    public function setDocker(bool $docker = false)
+    {
+        $this->docker = $docker;
+        return $this;
+    }
 
 	/**
 	 * @param  string|string[]  $proxy
@@ -50,6 +59,13 @@ class RequestFactory
 	 */
 	public function setProxy($proxy)
 	{
+	    if($this->docker)  {
+	        if( is_array($proxy)) {
+	            $proxy = array_map(function( $item){ return gethostbyname($item);},$proxy);
+            }else{
+                $proxy = gethostbyname($proxy);
+            }
+        }
 		$this->proxies = (array) $proxy;
 		return $this;
 	}
